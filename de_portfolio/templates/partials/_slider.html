@@ -1,0 +1,36 @@
+<!-- Slider and arrows -->
+<!-- <div class="flex grow flex-row justify-between items-center space-x-10 mt-6">
+    <div id="left-arrow"  class="flex items-center justify-center text-white bg-primary-blue-900 h-14 w-14 border-4 rounded-full text-2xl cursor-pointer hover:bg-primary-blue-500 duration-300 ease-in-out">
+        <i class="fa-solid fa-chevron-left"></i>
+    </div>
+    <div id="slider-container" class="grid grid-cols-1 md:grid-cols-3 md:gap-14">
+        {% for project in projects %}
+
+            <div class="relative w-72 h-[420px] overflow-hidden drop-shadow-2xl">
+                <img src="{{ project.image_main.url }}" alt="" class="w-full h-full bg-cover bg-no-repeat bg-center cursor-pointer ease-in-out duration-300 grayscale hover:filter-none hover:scale-105">
+                <h3 class="absolute inset-x-3 bottom-3 text-white text-2xl font-bold uppercase">{{ project.title }}</h3>
+            </div>
+
+        {% endfor %}
+    </div>
+    <div id="right-arrow"  class="flex items-center justify-center text-white bg-primary-blue-900 h-14 w-14 border-4 rounded-full text-2xl cursor-pointer hover:bg-primary-blue-500 duration-300 ease-in-out">
+        <i class="fa-solid fa-chevron-right"></i>
+    </div>
+</div> -->
+
+<!-- Container -->
+<div class="mw-[1120px] w-full h-[420px] bg-red-500">
+    <swiper-container class="mySwiper" pagination="true" pagination-clickable="true" navigation="true" slides-per-view="3" space-between="16" loop="true">
+        {% for project in projects %}
+            <swiper-slide>
+                <div class="relative w-72 h-[420px] overflow-hidden drop-shadow-2xl">
+                    <img src="{{ project.image_main.url }}" alt="" class="w-full h-full bg-cover bg-no-repeat bg-center cursor-pointer ease-in-out duration-300 grayscale hover:filter-none hover:scale-105">
+                    <h3 class="absolute inset-x-3 bottom-3 text-white text-2xl font-bold uppercase">{{ project.title }}</h3>
+                </div>
+            </swiper-slide>
+        {% endfor %}
+  </swiper-container>
+
+
+
+</div>
