@@ -17,6 +17,10 @@ class Project(models.Model):
     @property
     def short_summary(self):
         return f'{self.summary[:100]}...'
+    
+    @property
+    def technology_tags_list(self):
+        return self.technology.split(';')
 
     def __str__(self):
         return self.title

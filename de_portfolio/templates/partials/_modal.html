@@ -1,0 +1,27 @@
+<!-- modal -->
+<div class="modal fixed w-full h-full overflow-hidden top-0 left-0 bg-stone-900/90 z-30">
+    <div class="modal-content overflow-y-auto flex flex-col relative w-[1400px] min-w-[90%] h-[90%] m-auto p-8 bg-stone-50 shadow-2xl">
+        <div class="modal-info">
+            <div class="project-details">
+                <h3 id="modal-title" class="text-lg uppercase mb-3">Project Details</h3>
+                <div class="mb-3">
+                    <p class="font-bold mb-1">Tools used in this project:</p>
+                    <div class="modal-tech flex flex-wrap gap-2"></div>
+                </div>
+                <div class="mb-3">
+                    <p><span  class="font-bold">Source code: </span><a href="" target="_blank" rel="noopener noreferrer" id="modal-github-link" class="hover:text-primary-blue-500">www.github.com <i class="fa-solid fa-arrow-up-right-from-square"></i></a></p>
+                </div>
+            </div>
+            <div class="project-description mb-3">
+                <p class="font-bold">About this project:</p>
+                <p id="modal-summary"></p>
+            </div>
+            <div>
+                <p class="font-bold">Project images:</p>
+                <div id="modal-image-wrapper" class="flex flex-col md:flex-row gap-4">
+                </div>
+            </div>
+        </div>
+        <span id="close-btn" class="absolute top-0 right-3 text-4xl font-bold text-primary-blue-500 cursor-pointer">&times;</span>
+    </div>
+</div>

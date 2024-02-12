@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap');
 
-:root {
+/* :root {
     --swiper-pagination-color: #fff;
-}
+} */
 
 * {
     box-sizing: border-box;
@@ -11,5 +11,44 @@
 }
 
 body {
-    font-family: Poppins;
+    font-family: 'Poppins', 'san-serif';
+}
+
+.swiper {
+    width: 100%;
+    padding: 50px;
+  }
+
+.swiper-slide {
+  text-align: left;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.modal {
+  display: none;
+}
+
+.modal-content {
+  animation-name: modalopen;
+  animation-duration: 0.8s;
+}
+
+@keyframes modalopen {
+  from { opacity: 0;}
+  to { opacity: 1;}
 }
