@@ -6,16 +6,37 @@
 
             <!-- Logo -->
             <div>
-                <a href="{% url 'index' %}" class="font-black text-[50px] text-primary-blue-900">Matt<span class="text-primary-blue-500">.</span></a>
+                <a href="{% url 'index' %}" class="font-black text-4xl md:text-5xl text-primary-blue-900">Matt<span class="text-primary-blue-500">.</span></a>
             </div>
         
-            <!-- Menu Items -->
+            <!-- Menu items -->
             <div class="hidden md:flex space-x-10">
                 <a href="#portfolio" class="hover:text-primary-blue-500">Portfolio</a>
                 <a href="#" class="hover:text-primary-blue-500">Blog</a>
                 <a href="#" class="hover:text-primary-blue-500">Contact</a> 
             </div>
 
+            <!-- Hamburger icon -->
+            <button id="menu-btn" class="block hamburger md:hidden focus:outline-none">
+                <span class="hamburger-top bg-primary-blue-500"></span>
+                <span class="hamburger-middle bg-primary-blue-500"></span>
+                <span class="hamburger-bottom bg-primary-blue-500"></span>
+            </button>
+        </div>
+
+        <!-- Mobile menu -->
+        <div class="md:hidden">
+            <div id="mobile-menu" class="absolute flex flex-col items-start space-y-14 p-6 overflow-hidden left-0 top-[88px] h-[calc(100svh-88px)] w-full bg-stone-50 text-4xl text-primary-blue-900 origin-top transition-all ease-in-out duration-300 -translate-x-[400px]">
+                <a class="-translate-x-[200px] delay-300 ease-in-out duration-100 mobile-link" href="#portfolio">Portfolio</a>
+                <a class="-translate-x-[200px] delay-500 ease-in-out duration-100 mobile-link" href="#">Blog</a>
+                <a class="-translate-x-[200px] delay-700 ease-in-out duration-100 mobile-link" href="#">Contact</a>
+
+                <div class="absolute top-[60%] -left-24 w-[200%] h-[300px] -rotate-12 bg-primary-blue-100"></div>
+                <div class="absolute top-[63%] -left-12 w-[200%] h-[300px] -rotate-[10deg] bg-primary-blue-200"></div>
+                <div class="absolute top-[70%] -left-2 w-[200%] h-[300px] -rotate-[7deg] bg-primary-blue-500"></div>
+            </div>
         </div>
     </nav>
 </header>
+
+

@@ -31,6 +31,9 @@ const modalCloseBtn = document.querySelector('#close-btn')
 const modal = document.querySelector('.modal')
 const modalTech = document.querySelector('.modal-tech')
 const modalImageWrapper = document.querySelector('#modal-image-wrapper')
+const hamburger = document.querySelector('.hamburger')
+const nav = document.querySelector('#mobile-menu')
+const mobileLinks = document.querySelectorAll('.mobile-link')
 
 modalBtns.forEach(btn => {
   btn.addEventListener('click', function() {
@@ -53,12 +56,15 @@ modalBtns.forEach(btn => {
 
         let image_list = [data.imageMain, data.image1, data.image2, data.image3, data.image4, data.image5]
         for (let image of image_list) {
-          let imageFrame = document.createElement('div')
-          imageFrame.classList.add('max-h-96', 'w-auto', 'shadow-2xl')
-          let imageSrc = document.createElement('img')
-          imageSrc.src = image
-          imageFrame.append(imageSrc)
-          modalImageWrapper.append(imageFrame)
+          if (image !== '') {
+            let imageFrame = document.createElement('div')
+            imageFrame.classList.add('h-96', 'w-auto', 'shadow-2xl')
+            let imageSrc = document.createElement('img')
+            imageSrc.classList.add('h-full', 'object-cover')
+            imageSrc.src = image
+            imageFrame.append(imageSrc)
+            modalImageWrapper.append(imageFrame)
+          }
         }
 
         document.querySelector('.modal').style.display = 'flex'
@@ -69,4 +75,20 @@ modalBtns.forEach(btn => {
 
 modalCloseBtn.addEventListener('click', function() {
   modal.style.display = 'none'
+})
+
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open')
+  nav.classList.toggle('-translate-x-[400px]')
+  mobileLinks.forEach(link => link.classList.toggle('-translate-x-[200px]'))
+})
+
+
+mobileLinks.forEach(link => {
+  link.addEventListener('click', function() {
+    hamburger.classList.toggle('open')
+    nav.classList.toggle('-translate-x-[400px]')
+    mobileLinks.forEach(link => link.classList.toggle('-translate-x-[200px]'))
+  })
 })
